@@ -26,10 +26,15 @@
     void main(void)
     {
       // NOTE : according to the WebGL standard, 0.0f is not accepted
-	    float s_contrib = sin(position.x*2.0*3.14159 + u_time);
-        float t_contrib = cos(position.y*2.0*3.14159 + u_time);
-        float height = s_contrib*t_contrib;
+      float t_contrib;
+       float s_contrib ;
+        
+        float height = max((mod(position.x * 10.0, 2.0) < 1.0) ? sin(position.x * 3.1415926 + u_time) : 0.0,0.0);
+        height *= max((mod(position.y * 10.0, 2.0) < 1.0) ? sin(position.y * 3.1415926 + u_time) : 0.0, 0.0);
+        height *= 1.1;
 
+        //height += (mod(position.y * 10.0, 2.0) < 1.0) ? 1.0 : 0.0;
+        //height *= sin(u_time);
         vec4 max_color = vec4(u_color_max, 0.0);
         vec4 min_color = vec4(u_color_min, 0.0);
         vec4 diff_color = max_color - min_color;
@@ -69,8 +74,8 @@
   var up = [0.0, 0.0, 1.0];
 
 
-  var NUM_WIDTH_PTS = 32;
-  var NUM_HEIGHT_PTS = 32;
+  var NUM_WIDTH_PTS = 64;
+  var NUM_HEIGHT_PTS = 64;
 
   var message;
   var canvas;
