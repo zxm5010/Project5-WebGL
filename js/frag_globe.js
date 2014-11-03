@@ -2,6 +2,11 @@
     "use strict";
     /*global window,document,Float32Array,Uint16Array,mat4,vec3,snoise*/
     /*global getShaderSource,createWebGLContext,createProgram*/
+    var stats = new Stats();
+    stats.setMode(1);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.top = '10px';
+    document.body.appendChild( stats.domElement );
 
     function sphericalToCartesian( r, a, e ) {
         var x = r * Math.cos(e) * Math.cos(a);
@@ -56,6 +61,10 @@
     var u_BumpLocation;
     var u_timeLocation;
 
+    var container;
+    var scene, renderer,stats, camera;
+    var skyboxMesh;
+
     (function initializeShader() {
         var vs = getShaderSource(document.getElementById("vs"));
         var fs = getShaderSource(document.getElementById("fs"));
@@ -79,6 +88,7 @@
 
         gl.useProgram(program);
     })();
+
 
     var dayTex   = gl.createTexture();
     var bumpTex  = gl.createTexture();
@@ -234,6 +244,7 @@
     document.onmousemove = handleMouseMove;
 
 
+
     function animate() {
         ///////////////////////////////////////////////////////////////////////////
         // Update
@@ -292,6 +303,7 @@
         gl.uniform1f(u_timeLocation, time);
 
         window.requestAnimFrame(animate);
+        stats.update();
     }
 
     var textureCount = 0;
@@ -315,4 +327,5 @@
     initializeTexture(transTex, "assets/earthtrans1024.png");
     initializeTexture(lightTex, "assets/earthlight1024.png");
     initializeTexture(specTex, "assets/earthspec1024.png");
+
 }());
