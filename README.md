@@ -56,8 +56,9 @@ PART 1
 
 * A wave that simulates generation of blocks or buildings, etc.
 
+![Interesting Wave](https://github.com/zxm5010/Project5-WebGL/blob/gh-pages/renders/interesting_wave.jpg)
 
-
+![Interesting Wave2](https://github.com/zxm5010/Project5-WebGL/blob/gh-pages/renders/interesting_wav2.jpg)
 
 -------------------------------------------------------------------------------
 PART 2 REQUIREMENTS:
@@ -77,7 +78,7 @@ Extra freature implemented:
 
 
 Final Image:
-
+![Final Image](https://github.com/zxm5010/Project5-WebGL/blob/gh-pages/renders/all_features.jpg)
 
 Possible Improvement for water rendering:
 
