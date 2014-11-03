@@ -77,8 +77,10 @@ Extra freature implemented:
 * Procedural water rendering and animation using Perlin noise 
 
 
-Final Image:
+Final Images:
 ![Final Image](https://github.com/zxm5010/Project5-WebGL/blob/gh-pages/renders/all_features.jpg)
+
+![Final Image2](https://github.com/zxm5010/Project5-WebGL/blob/gh-pages/renders/image1.jpg)
 
 Possible Improvement for water rendering:
 
