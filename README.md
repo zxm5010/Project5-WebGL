@@ -49,7 +49,7 @@ PART 1
 
 * A sin-wave based vertex shader:
 
-![Example sin wave grid](resources/sinWaveGrid.png)
+![Example sin wave grid](https://github.com/zxm5010/Project5-WebGL/blob/gh-pages/renders/vertex_wave.jpg)
 
 
 **Wave Of Your Choice**
